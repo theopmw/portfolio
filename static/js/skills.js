@@ -8,22 +8,22 @@
 
 let languages = [
     "HTML", "CSS", "JavaScript", "Python"
-]
+];
 
 // set variables
 let imgType = ".png";
 let imgs_skills = "static/img/skills/";
-let ul_languages = "<ul class='list-group list-group-horizontal'>";
+let ul_languages = "<div class='row'><div class='col-12'><ul class='list-group list-group-horizontal'>";
 
 // slice languages array 
 let languagesRow1 = languages.slice(0, 4);
 
 // row 1
-let row1 = ul_languages;S
+let row1 = ul_languages;
 languagesRow1.map(language => {
-    row1 += `<li class="list-group-item"><div><img src="${imgs_skills}${skill.toLowerCase()}${imgType}" alt="${language}" lazyload="on"><h1>${language}</h1></div></li>`;
+    row1 += `<li class="list-group-item skills-item col-3 p-0"><div><img src="${imgs_skills}${language.toLowerCase()}${imgType}" alt="${language}" lazyload="on"><h3>${language}</h3></div></li>`;
 });
-row1 += "</ul>";
+row1 += "</ul></div></div>";
 
 // append all rows to #skills
 let skillsDiv = document.getElementById("skills");
